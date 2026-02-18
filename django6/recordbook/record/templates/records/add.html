@@ -1,0 +1,14 @@
+{% extends 'records/layout.html' %}
+
+{% block content %}
+<h2>Add Record</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <input type="number" name="roll" placeholder="Enter Roll" required>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <button type="submit">Save Record</button>
+</form>
+
+{% endblock %}
