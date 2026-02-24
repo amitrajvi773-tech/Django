@@ -1,0 +1,19 @@
+{% extends "jobs/base.html" %}
+
+{% block content %}
+<h2>Register</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <label>Select Role:</label>
+    <select name="role">
+        <option value="JOB_SEEKER">Job Seeker</option>
+        <option value="RECRUITER">Recruiter</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>
+
+{% endblock %}

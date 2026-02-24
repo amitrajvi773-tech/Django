@@ -1,0 +1,21 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+
+<h2>Your Posted Jobs</h2>
+
+{% for job in jobs %}
+<div class="card">
+    <h3>{{ job.title }}</h3>
+
+    <h4>Applicants:</h4>
+    {% for application in job.application_set.all %}
+        <p>{{ application.applicant.username }}</p>
+    {% empty %}
+        <p>No applicants yet.</p>
+    {% endfor %}
+</div>
+{% empty %}
+<p>You have not posted any jobs.</p>
+{% endfor %}
+
+{% endblock %}
